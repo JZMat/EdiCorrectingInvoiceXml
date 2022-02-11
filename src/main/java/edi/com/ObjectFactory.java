@@ -48,6 +48,12 @@ public class ObjectFactory {
 	public TaxSummaryLines createTaxSummaryLines() {
 		return new TaxSummaryLines();
 	}
-	
-	
+
+	public Parties createParties() {
+		return new Parties();
+	}
+
+	public Buyer createBuyer() {
+		return new Buyer();
+	}
 }

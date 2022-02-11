@@ -17,6 +17,12 @@
             <InvoiceReferenceDate>2021-07-30</InvoiceReferenceDate>
         </Reference>
     </Invoice-Header>
+    <Invoice-Parties>
+        <Buyer>
+            <ILN>1234567890123</ILN>
+            <Name>Buyer name</Name>
+        </Buyer>
+    </Invoice-Parties>
     <Invoice-Lines>
         <Line>
             <Line-Item>

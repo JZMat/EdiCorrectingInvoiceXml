@@ -49,6 +49,13 @@ public class XmlApp {
         message.setHeader(header);
 
         // ------------------------------------------------------
+        Parties parties = factory.createParties();
+        Buyer buyer = factory.createBuyer();
+        buyer.setBuyerIln("1234567890123");
+        buyer.setBuyerName("Buyer name");
+        parties.setBuyer(buyer);
+        message.setParties(parties);
+        // ------------------------------------------------------
 
         Lines lines = factory.createLines();
         LineItem lineItem1 = factory.createLineItem();
