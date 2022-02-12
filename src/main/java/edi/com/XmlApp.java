@@ -54,6 +54,10 @@ public class XmlApp {
         buyer.setBuyerIln("1234567890123");
         buyer.setBuyerName("Buyer name");
         parties.setBuyer(buyer);
+        Seller seller = factory.createSeller();
+        seller.setSellerIln("3210987654321");
+        seller.setSellerName("Seller name");
+        parties.setSeller(seller);
         message.setParties(parties);
         // ------------------------------------------------------
 
@@ -102,7 +106,7 @@ public class XmlApp {
                 RoundingMode.HALF_UP));
         lineItem2.setPreviousQuantity(new BigInteger("2"));
         lineItem2.setPreviousTaxRate(new BigDecimal(5).setScale(2, RoundingMode.HALF_UP));
-        lineItem2.setPreviousInvoiceUnitNetPrice(new BigDecimal("12.99").setScale(2, RoundingMode.HALF_UP));
+        lineItem2.setPreviousInvoiceUnitNetPrice(new BigDecimal("121.99").setScale(2, RoundingMode.HALF_UP));
         lineItem2.setPreviousTaxAmount(lineItem2.getPreviousInvoiceUnitNetPrice()
                 .multiply(new BigDecimal(lineItem2.getPreviousQuantity()))
                 .multiply(lineItem2.getPreviousTaxRate().divide(new BigDecimal(100), RoundingMode.HALF_UP))
@@ -173,15 +177,8 @@ public class XmlApp {
         summary.setCorrectionTotalTaxAmount((summary.getTotalTaxAmount()).subtract(summary.getPreviousTotalTaxAmount()));
 
         TaxSummary taxSummary = factory.createTaxSummary();
-        TaxSummaryLine taxSummaryLine1 = factory.createTaxSummaryLine();
-        taxSummary.setTaxSummaryLine(taxSummaryLine1);
-
-        TaxSummaryLine taxSummaryLine2 = factory.createTaxSummaryLine();
-        taxSummary.setTaxSummaryLine(taxSummaryLine2);
         summary.setTaxSummary(taxSummary);
-
         message.setSummary(summary);
-        // ------------------------------------------------------
 
         JAXBContext jaxbContext = JAXBContext.newInstance(Document.class);
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
@@ -189,7 +186,7 @@ public class XmlApp {
         jaxbMarshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.FALSE);
         jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-        jaxbMarshaller.marshal(message, new File("test.xml"));
+        jaxbMarshaller.marshal(message, new File("test_corrective_invoice.xml"));
 
     }
 

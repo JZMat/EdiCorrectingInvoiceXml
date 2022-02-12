@@ -37,17 +37,7 @@ public class ObjectFactory {
 		return new Reference();
 	}
 
-	public TaxSummaryLine createTaxSummaryLine() {
-		return new TaxSummaryLine();
-	}
-
-	public TaxSummary createTaxSummary() {
-		return new TaxSummary();
-	}
-
-	public TaxSummaryLines createTaxSummaryLines() {
-		return new TaxSummaryLines();
-	}
+	public TaxSummary createTaxSummary() { return new TaxSummary();	}
 
 	public Parties createParties() {
 		return new Parties();
@@ -55,5 +45,9 @@ public class ObjectFactory {
 
 	public Buyer createBuyer() {
 		return new Buyer();
+	}
+
+	public Seller createSeller() {
+		return new Seller();
 	}
 }

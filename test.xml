@@ -22,6 +22,10 @@
             <ILN>1234567890123</ILN>
             <Name>Buyer name</Name>
         </Buyer>
+        <Seller>
+            <ILN>3210987654321</ILN>
+            <Name>Seller name</Name>
+        </Seller>
     </Invoice-Parties>
     <Invoice-Lines>
         <Line>
@@ -54,13 +58,13 @@
                 <TaxAmount>0.65</TaxAmount>
                 <NetAmount>12.99</NetAmount>
                 <PreviousInvoiceQuantity>2</PreviousInvoiceQuantity>
-                <PreviousInvoiceUnitNetPrice>12.99</PreviousInvoiceUnitNetPrice>
+                <PreviousInvoiceUnitNetPrice>121.99</PreviousInvoiceUnitNetPrice>
                 <PreviousTaxRate>5.00</PreviousTaxRate>
-                <PreviousTaxAmount>1.30</PreviousTaxAmount>
+                <PreviousTaxAmount>12.20</PreviousTaxAmount>
                 <PreviousNetAmount>25.98</PreviousNetAmount>
                 <CorrectionInvoiceQuantity>-1</CorrectionInvoiceQuantity>
-                <CorrectionInvoiceUnitNetPrice>0.00</CorrectionInvoiceUnitNetPrice>
-                <CorrectionTaxAmount>-0.65</CorrectionTaxAmount>
+                <CorrectionInvoiceUnitNetPrice>-109.00</CorrectionInvoiceUnitNetPrice>
+                <CorrectionTaxAmount>-11.55</CorrectionTaxAmount>
                 <CorrectionNetAmount>-12.99</CorrectionNetAmount>
             </Line-Item>
         </Line>
@@ -70,11 +74,8 @@
         <TotalNetAmount>25.98</TotalNetAmount>
         <TotalTaxAmount>1.56</TotalTaxAmount>
         <PreviousTotalNetAmount>51.96</PreviousTotalNetAmount>
-        <PreviousTotalTaxAmount>3.12</PreviousTotalTaxAmount>
+        <PreviousTotalTaxAmount>14.02</PreviousTotalTaxAmount>
         <CorrectionTotalNetAmount>-25.98</CorrectionTotalNetAmount>
-        <CorrectionTotalTaxAmount>-1.56</CorrectionTotalTaxAmount>
-        <Tax-Summary>
-            <Tax-Summary-Line/>
-        </Tax-Summary>
+        <CorrectionTotalTaxAmount>-12.46</CorrectionTotalTaxAmount>
     </Invoice-Summary>
 </Document-Invoice>

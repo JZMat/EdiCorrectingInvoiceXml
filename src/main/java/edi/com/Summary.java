@@ -20,23 +20,21 @@ public class Summary {
     protected BigDecimal totalNetAmount;
     @XmlElement(name = "TotalTaxAmount", required = true)
     protected BigDecimal totalTaxAmount;
-
     @XmlElement(name = "PreviousTotalNetAmount", required = true)
     protected BigDecimal previousTotalNetAmount;
     @XmlElement(name = "PreviousTotalTaxAmount", required = true)
     protected BigDecimal previousTotalTaxAmount;
-
     @XmlElement(name = "CorrectionTotalNetAmount", required = true)
     protected BigDecimal correctionTotalNetAmount;
     @XmlElement(name = "CorrectionTotalTaxAmount", required = true)
     protected BigDecimal correctionTotalTaxAmount;
-
     @XmlElement(name = "Tax-Summary", required = true)
     protected TaxSummary taxSummary;
 
+
+
     public void setTotalLines(BigInteger valueOf) {
         this.totalLines = valueOf;
-
     }
 
     public void setTotalNetAmount(BigDecimal value) {
@@ -91,12 +89,12 @@ public class Summary {
         return previousTotalNetAmount;
     }
 
-    public TaxSummary getTaxSummary() {
+    public TaxSummary getTaxSummaryLines() {
         return taxSummary;
     }
 
-    void setTaxSummary(TaxSummary taxSummary) {
-        this.taxSummary = taxSummary;
+    public void setTaxSummary(TaxSummary value) {
+        this.taxSummary = value;
     }
 
 
