@@ -24,7 +24,9 @@ public class Document {
 		this.header = value;
 	}
 
-	public void setParties(Parties value){this.parties = value;}
+	public void setParties(Parties value){
+		this.parties = value;
+	}
 
 	public void setLines(Lines value) {
 		this.lines = value;

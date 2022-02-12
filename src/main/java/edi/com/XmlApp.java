@@ -177,7 +177,15 @@ public class XmlApp {
         summary.setCorrectionTotalTaxAmount((summary.getTotalTaxAmount()).subtract(summary.getPreviousTotalTaxAmount()));
 
         TaxSummary taxSummary = factory.createTaxSummary();
+        TaxSummaryLine taxSummaryLine1 = factory.createTaxSummaryLine();
+        taxSummaryLine1.setTaxRate(5);
+        taxSummary.setTaxSummaryLine(taxSummaryLine1);
+
+        TaxSummaryLine taxSummaryLine2 = factory.createTaxSummaryLine();
+        taxSummaryLine2.setTaxRate(7);
+        taxSummary.setTaxSummaryLine(taxSummaryLine2);
         summary.setTaxSummary(taxSummary);
+
         message.setSummary(summary);
 
         JAXBContext jaxbContext = JAXBContext.newInstance(Document.class);

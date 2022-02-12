@@ -50,4 +50,6 @@ public class ObjectFactory {
 	public Seller createSeller() {
 		return new Seller();
 	}
+
+	public TaxSummaryLine createTaxSummaryLine() { return new TaxSummaryLine();	}
 }

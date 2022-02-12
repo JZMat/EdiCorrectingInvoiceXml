@@ -5,21 +5,24 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "taxSummary"
+@XmlType(name = "taxSummary", propOrder = {
+    "taxSummaryLine"
 })
 public class TaxSummary {
 
-    @XmlElement(name = "Tax-Summary", required = true)
-    protected TaxSummary taxSummary;
+  
 
-    public TaxSummary getTaxSummary() {
-        return taxSummary;
+	@XmlElement(name = "Tax-Summary-Line", required = true)
+    protected TaxSummaryLine taxSummaryLine;
+
+    public TaxSummaryLine getTaxSummaryLine() {
+        return taxSummaryLine;
     }
 
-    public void setTaxSummary(TaxSummary value) {
-        this.taxSummary = value;
-    }
+    public void setTaxSummaryLine(TaxSummaryLine taxSummaryLine) {
+  		this.taxSummaryLine = taxSummaryLine;
+  	}
 
 }
