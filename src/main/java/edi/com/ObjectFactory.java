@@ -52,4 +52,6 @@ public class ObjectFactory {
 	}
 
 	public TaxSummaryLine createTaxSummaryLine() { return new TaxSummaryLine();	}
+//
+//	public TaxSummaryLines createTaxSummaryLines() { return new TaxSummaryLines();	}
 }

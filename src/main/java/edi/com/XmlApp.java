@@ -25,7 +25,7 @@ public class XmlApp {
 
     private void start() throws JAXBException {
         ObjectFactory factory = new ObjectFactory();
-        Document message = factory.createDocument();
+        Document document = factory.createDocument();
 
         Header header = factory.createHeader();
         header.setInvoiceNumber("1234");
@@ -46,7 +46,7 @@ public class XmlApp {
         reference.setInvoiceReferenceDate("2021-07-30");
         header.setReference(reference);
 
-        message.setHeader(header);
+        document.setHeader(header);
 
         // ------------------------------------------------------
         Parties parties = factory.createParties();
@@ -58,7 +58,7 @@ public class XmlApp {
         seller.setSellerIln("3210987654321");
         seller.setSellerName("Seller name");
         parties.setSeller(seller);
-        message.setParties(parties);
+        document.setParties(parties);
         // ------------------------------------------------------
 
         Lines lines = factory.createLines();
@@ -135,7 +135,7 @@ public class XmlApp {
 		  lines.getLine().add(line3);*/
 
 
-        message.setLines(lines);
+        document.setLines(lines);
 
         /*
          **** S U M M A R Y ***
@@ -176,17 +176,21 @@ public class XmlApp {
 
         summary.setCorrectionTotalTaxAmount((summary.getTotalTaxAmount()).subtract(summary.getPreviousTotalTaxAmount()));
 
-        TaxSummary taxSummary = factory.createTaxSummary();
         TaxSummaryLine taxSummaryLine1 = factory.createTaxSummaryLine();
-        taxSummaryLine1.setTaxRate(5);
-        taxSummary.setTaxSummaryLine(taxSummaryLine1);
+        taxSummaryLine1.setTaxRate("5.00");
+        taxSummaryLine1.setTaxCategoryCode("S");
 
         TaxSummaryLine taxSummaryLine2 = factory.createTaxSummaryLine();
-        taxSummaryLine2.setTaxRate(7);
-        taxSummary.setTaxSummaryLine(taxSummaryLine2);
+        taxSummaryLine2.setTaxRate("7.00");
+        taxSummaryLine2.setTaxCategoryCode("E");
+
+        TaxSummary taxSummary = factory.createTaxSummary();
+        taxSummary.add(taxSummaryLine1);
+        taxSummary.add(taxSummaryLine2);
+
         summary.setTaxSummary(taxSummary);
 
-        message.setSummary(summary);
+        document.setSummary(summary);
 
         JAXBContext jaxbContext = JAXBContext.newInstance(Document.class);
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
@@ -194,7 +198,7 @@ public class XmlApp {
         jaxbMarshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.FALSE);
         jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-        jaxbMarshaller.marshal(message, new File("test_corrective_invoice.xml"));
+        jaxbMarshaller.marshal(document, new File("test_corrective_invoice.xml"));
 
     }
 

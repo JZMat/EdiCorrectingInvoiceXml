@@ -20,20 +20,10 @@ public class Document {
 	@XmlElement(name = "Invoice-Summary", required = true)
 	protected Summary summary;
 
-	public void setHeader(Header value) {
-		this.header = value;
-	}
-
-	public void setParties(Parties value){
-		this.parties = value;
-	}
-
-	public void setLines(Lines value) {
-		this.lines = value;
-	}
-
+	public void setHeader(Header value) { this.header = value; }
+	public void setParties(Parties value){ this.parties = value; }
+	public void setLines(Lines value) {	this.lines = value;	}
     public void setSummary(Summary value) {
         this.summary = value;
     }
-	
 }
